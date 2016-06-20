@@ -6,13 +6,13 @@ The container is exporting:
 * port 22 (for ssh connections)
 * `/data` volume
 
-## Build
+## Build image
 
 ```
-docker build --rm -t "ssh-rsync-image" .
+docker build --rm -t ssh-rsync-image .
 ```
 
-## Run
+## Run the container
 
 * First you need to create at least one ssh key (without passphrase)
 
@@ -34,7 +34,7 @@ docker logs ssh-rsync-server
 
 ## Use
 
-* Rsync local /etc to remote /data/etc (note: all paths are always relative to /data)
+* Rsync local `/etc` to remote `/data/etc` (note: all paths are always relative to `/data`)
 
 ```
 rsync -av -e "ssh -i $HOME/.ssh/id_rsa_rsync -p 22222" /etc root@127.0.0.1:/
