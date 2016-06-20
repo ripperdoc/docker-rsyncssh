@@ -1,0 +1,8 @@
+AuthorizedKeysFile	.ssh/authorized_keys
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM no
+PermitRootLogin without-password
+UsePrivilegeSeparation sandbox		# Default for new installations.
+Subsystem	sftp	/usr/lib/ssh/sftp-server
+UseDNS no
